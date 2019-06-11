@@ -35,6 +35,8 @@ hashtab * hashtab_create(int size,hash_key_func hash_value,
 	h->htables = (hashtab_node **)malloc(size * sizeof(hashtab_node*));
     if (h->htables == NULL)
 	{
+		free(h);
+	    	h = NULL;
 		return NULL;
 	}
 
